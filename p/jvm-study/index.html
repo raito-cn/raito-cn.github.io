@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Jvm初学 ">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Jvm虚拟机学习">
 <title>Jvm-Study</title>
 
 <link rel='canonical' href='https://raito-cn.github.io/p/jvm-study/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Jvm-Study">
-<meta property='og:description' content="Jvm初学 ">
+<meta property='og:description' content="Jvm虚拟机学习">
 <meta property='og:url' content='https://raito-cn.github.io/p/jvm-study/'>
 <meta property='og:site_name' content='raito'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-08T09:50:45&#43;08:00'/><meta property='article:modified_time' content='2025-02-08T09:50:45&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-08T09:50:45&#43;08:00'/><meta property='article:modified_time' content='2025-02-08T09:50:45&#43;08:00'/><meta property='og:image' content='https://raito-cn.github.io/p/jvm-study/855e88cd3b7bd4b11f63c48eeeb24ddbb53db427.jpg' />
 <meta name="twitter:title" content="Jvm-Study">
-<meta name="twitter:description" content="Jvm初学 ">
+<meta name="twitter:description" content="Jvm虚拟机学习"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://raito-cn.github.io/p/jvm-study/855e88cd3b7bd4b11f63c48eeeb24ddbb53db427.jpg' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -242,10 +243,34 @@
     
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/jvm-study/">
+                <img src="/p/jvm-study/855e88cd3b7bd4b11f63c48eeeb24ddbb53db427_hu_f1771b1c4f2b2a76.jpg"
+                        srcset="/p/jvm-study/855e88cd3b7bd4b11f63c48eeeb24ddbb53db427_hu_f1771b1c4f2b2a76.jpg 800w, /p/jvm-study/855e88cd3b7bd4b11f63c48eeeb24ddbb53db427_hu_2fc302baeea72de0.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post Jvm-Study" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/jvm/" >
+                Jvm
+            </a>
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+    </header>
     
 
     <div class="article-title-wrapper">
@@ -253,6 +278,10 @@
             <a href="/p/jvm-study/">Jvm-Study</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            Jvm虚拟机学习
+        </h3>
         
     </div>
 
@@ -272,7 +301,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025-02-08</time>
+                <time class="article-time--published">2025-02-08 am 09:50</time>
             </div>
         
 
@@ -423,6 +452,55 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+    
+    const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+    const cssPath = "https://raito-cn.github.io/waifu/waifu.css";
+    const tipsJsonPath = "https://raito-cn.github.io/waifu/waifu-tips.json";
 
+
+
+    
+
+    
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            }
+            else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            
+            loadExternalResource(cssPath, "css"),
+            loadExternalResource(live2d_path + "live2d.min.js", "js"),
+            loadExternalResource(live2d_path + "waifu-tips.js", "js")
+        ]).then(() => {
+            
+            initWidget({
+                waifuPath: tipsJsonPath,
+                
+                cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
+                tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+            });
+        });
+    }
+</script>
     </body>
 </html>

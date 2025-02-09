@@ -10,7 +10,7 @@
 <meta property='og:description' content="码农">
 <meta property='og:url' content='https://raito-cn.github.io/tags/themes/'>
 <meta property='og:site_name' content='raito'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-02-08T14:49:49&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-02-09T14:27:36&#43;08:00 '/>
 <meta name="twitter:title" content="Tag: Themes - raito">
 <meta name="twitter:description" content="码农"><link rel="alternate" type="application/rss&#43;xml" href="https://raito-cn.github.io/tags/themes/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -282,7 +282,7 @@
                     <a href="/archives/#2025">
                         
                             <span class="year">2025</span>
-                            <span class="count">2</span>
+                            <span class="count">3</span>
                         
                     </a> 
                 </div>
@@ -327,6 +327,14 @@
         
             <a href="/categories/test/" class="font_size_3">
                 Test
+            </a>
+        
+            <a href="/categories/java/" class="font_size_1">
+                Java
+            </a>
+        
+            <a href="/categories/jvm/" class="font_size_1">
+                Jvm
             </a>
         
             <a href="/categories/syntax/" class="font_size_1">
@@ -377,7 +385,7 @@
         <div class="article-details">
             <h2 class="article-title">Markdown Syntax Guide</h2>
             <footer class="article-time">
-                <time datetime='2019-03-11T00:00:00Z'>2019-03-11</time>
+                <time datetime='2019-03-11T00:00:00Z'>2019-03-11 am 12:00</time>
             </footer>
         </div>
             <div class="article-image">
@@ -427,6 +435,55 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<script>
+    
+    const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
+    const cssPath = "https://raito-cn.github.io/waifu/waifu.css";
+    const tipsJsonPath = "https://raito-cn.github.io/waifu/waifu-tips.json";
 
+
+
+    
+
+    
+    function loadExternalResource(url, type) {
+        return new Promise((resolve, reject) => {
+            let tag;
+
+            if (type === "css") {
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+            }
+            else if (type === "js") {
+                tag = document.createElement("script");
+                tag.src = url;
+            }
+            if (tag) {
+                tag.onload = () => resolve(url);
+                tag.onerror = () => reject(url);
+                document.head.appendChild(tag);
+            }
+        });
+    }
+
+    
+    if (screen.width >= 768) {
+        Promise.all([
+            
+            loadExternalResource(cssPath, "css"),
+            loadExternalResource(live2d_path + "live2d.min.js", "js"),
+            loadExternalResource(live2d_path + "waifu-tips.js", "js")
+        ]).then(() => {
+            
+            initWidget({
+                waifuPath: tipsJsonPath,
+                
+                cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
+                tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+            });
+        });
+    }
+</script>
     </body>
 </html>
