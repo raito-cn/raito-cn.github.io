@@ -240,7 +240,51 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#基础篇">基础篇</a>
+      <ol>
+        <li><a href="#初识jvm">初识JVM</a>
+          <ol>
+            <li><a href="#介绍">介绍</a></li>
+            <li><a href="#组成">组成</a></li>
+          </ol>
+        </li>
+        <li><a href="#字节码文件详解">字节码文件详解</a></li>
+        <li><a href="#java内存结构">Java内存结构</a></li>
+        <li><a href="#垃圾回收">垃圾回收</a></li>
+        <li><a href="#类的生命周期和类加载器">类的生命周期和类加载器</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -317,8 +361,53 @@
     <section class="article-content">
     
     
-    <h1 id="jvm初学">Jvm初学
-</h1>
+    <h2 id="基础篇">基础篇
+</h2><h3 id="初识jvm">初识JVM
+</h3><h4 id="介绍">介绍
+</h4><ol>
+<li>
+<p>JVM本质是一个运行在计算机上的程序，它的职责是运行Java字节码文件</p>
+<p>Java程序运行的流程大体为:</p>
+<p><code>Java源文件 --&gt; Javac编写为字节码文件 --&gt; Jvm向计算机解释运行字节码文件</code></p>
+</li>
+<li>
+<p>内存管理
+自动为对象，方法等分配内存，并实现了自动的<strong>垃圾回收</strong>机制，回收不再使用的对象</p>
+</li>
+<li>
+<p>即时编译
+JVM提供了即时编译机制(<code>JIT</code>)，例如对热点代码进行优化，提升执行效率。即时编译JVM通常情况下会逐条解释字节码，并且每次执行都会从字节码重新解释到机器指令。这种方式比较慢，因此对于热点代码，JVM会启用JIT编译器直接将频繁执行的字节码片段转化为机器码，并缓存起来。</p>
+</li>
+</ol>
+<h4 id="组成">组成
+</h4><ol>
+<li>类加载器: 加载Class字节码文件中的内容到内存中</li>
+<li>运行时数据区域: 负责管理JVM使用到的内存，例如创建对象和销毁对象</li>
+<li>执行引擎: 包括即时编译器、解释器、垃圾回收期等</li>
+<li>本地接口: 调用本地已经编译的方法，比如虚拟机中提供的c/c++的方法(本质上Jvm是由C/C++实现的)</li>
+</ol>
+<h3 id="字节码文件详解">字节码文件详解
+</h3><ol>
+<li>字节码文件保存了源代码(Java)文件编译之后的内容，以二进制的方式存储，无法直接用记事本打开阅读，推荐使用<code>jclasslib</code>工具查看字节码文件
+<img src="/p/jvm-study/%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6.jpg"
+	width="1494"
+	height="568"
+	srcset="/p/jvm-study/%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6_hu_8869577d0c0069cd.jpg 480w, /p/jvm-study/%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6_hu_3307436e81014c52.jpg 1024w"
+	loading="lazy"
+	
+		alt="字节码文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="263"
+		data-flex-basis="631px"
+	
+></li>
+</ol>
+<h3 id="java内存结构">Java内存结构
+</h3><h3 id="垃圾回收">垃圾回收
+</h3><h3 id="类的生命周期和类加载器">类的生命周期和类加载器
+</h3>
 </section>
 
 
